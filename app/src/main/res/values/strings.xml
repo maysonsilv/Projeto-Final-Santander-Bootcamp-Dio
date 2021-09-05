@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">To do list</string>
+    <string name="label_add_task">Criar Tarefa</string>
+    <string name="lablel_title">Título</string>
+    <string name="lable_descricao">Descrição</string>
+    <string name="lable_date">Data</string>
+    <string name="lable_hour">Hora</string>
+</resources>
