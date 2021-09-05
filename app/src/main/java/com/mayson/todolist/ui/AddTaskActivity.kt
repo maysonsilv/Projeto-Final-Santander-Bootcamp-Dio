@@ -7,8 +7,10 @@ import com.google.android.material.datepicker.MaterialDatePicker
 import com.google.android.material.timepicker.MaterialTimePicker
 import com.google.android.material.timepicker.TimeFormat
 import com.mayson.todolist.databinding.ActivityAddTaskBinding
+import com.mayson.todolist.datasource.TaskDataSource
 import com.mayson.todolist.extensions.format
 import com.mayson.todolist.extensions.text
+import com.mayson.todolist.model.Task
 import java.time.DateTimeException
 import java.util.*
 
@@ -42,9 +44,27 @@ class AddTaskActivity: AppCompatActivity() {
             val timePiker = MaterialTimePicker.Builder().setTimeFormat(TimeFormat.CLOCK_24H)
                 .build()
             timePiker.addOnPositiveButtonClickListener{
-                binding.inputHora.text = ("${timePiker.hour}:${timePiker.minute}")
+               val minute =  if (timePiker.minute in 0..9) "0${timePiker.minute}" else timePiker.minute
+               val hour =  if (timePiker.hour in 0..9) "0${timePiker.hour}" else timePiker.hour
+                binding.inputHora.text = ("$hour:$minute")
             }
             timePiker.show(supportFragmentManager, null)
+        }
+
+        binding.btCancelar.setOnClickListener{
+            finish()
+        }
+
+        binding.btCt.setOnClickListener {
+            val task = Task(
+                title = binding.inputText.text,
+                description = binding.inputDesc.text,
+                hour = binding.inputHora.text,
+                date = binding.inputData.text
+
+            )
+            TaskDataSource.insertTask(task)
+            Log.e("TAG", "InsertTask: " + TaskDataSource.getList())
         }
     }
 
