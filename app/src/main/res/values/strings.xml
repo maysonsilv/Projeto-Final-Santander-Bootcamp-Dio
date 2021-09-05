@@ -5,4 +5,6 @@
     <string name="lable_descricao">Descrição</string>
     <string name="lable_date">Data</string>
     <string name="lable_hour">Hora</string>
+    <string name="tarefas_de_hoje">Tarefas de Hoje</string>
+    <string name="label_description_task">Nova Tarefa</string>
 </resources>

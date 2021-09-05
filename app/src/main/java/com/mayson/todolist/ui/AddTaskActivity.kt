@@ -64,7 +64,7 @@ class AddTaskActivity: AppCompatActivity() {
 
             )
             TaskDataSource.insertTask(task)
-            Log.e("TAG", "InsertTask: " + TaskDataSource.getList())
+            finish()
         }
     }
 
