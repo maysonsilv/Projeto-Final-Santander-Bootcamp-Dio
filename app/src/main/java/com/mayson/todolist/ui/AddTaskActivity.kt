@@ -1,5 +1,6 @@
 package com.mayson.todolist.ui
 
+import android.app.Activity
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -63,7 +64,9 @@ class AddTaskActivity: AppCompatActivity() {
                 date = binding.inputData.text
 
             )
+
             TaskDataSource.insertTask(task)
+            setResult(Activity.RESULT_OK)
             finish()
         }
     }

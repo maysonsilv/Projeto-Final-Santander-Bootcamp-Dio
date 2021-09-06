@@ -7,4 +7,6 @@
     <string name="lable_hour">Hora</string>
     <string name="tarefas_de_hoje">Tarefas de Hoje</string>
     <string name="label_description_task">Nova Tarefa</string>
+    <string name="editar_menu">Editar</string>
+    <string name="deletar">Deletar</string>
 </resources>
